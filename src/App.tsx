@@ -1,7 +1,8 @@
 import { FC } from "react";
+import SolidS from "./patterns/solid/S/SolidS";
 
 const App: FC = () => (
-  <div>Hello</div>
+  <SolidS/>
 )
 
 export default App;
