@@ -7,20 +7,29 @@ export type Video = {
     coverUrl: string
 }
 
+type LiveStream = {
+    name: string
+    previewUrl: string
+}
+
 type Props = {
-    items: Array<Video>
+    items: Array<Video | LiveStream>
 }
 
 const VideoList:FC<Props> = ({items}) => {
     return (
         <ul>
             {
-                items.map(item => 
-                    <Thumbnail
+                items.map(item => {
+                    if("coverUrl" in item) {
+                        return <Thumbnail
                         key={item.title}
                         video={item}
-                    /> 
-                )
+                        /> 
+                    } else {
+                        
+                    }
+                })
             }
         </ul>
     )
